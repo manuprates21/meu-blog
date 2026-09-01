@@ -45,12 +45,54 @@
         font-weight: bold;
         color: #500429;
     }
+    .botoes-categorias{
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin: 20px 0;
+    }
+    .botoes-categorias button{
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.2s;
+        width: 110px;
+    }
+    .botoes-categorias button:hover {
+        transform: scale(1.1);
+    }
+    .botoes-categorias img {
+        width: 100%;
+        border-radius: 50%;
+    }
 </style>
 <body>
     <header>
         <h1>blog sobre beleza feminina!</h1>
         <p>Aqui compartilhamos o mundo da mulher!</p>
     </header>
+    <div class="botoes-categorias">
+        <button 
+        onclick="mostrarConteudo('maquiagem')">
+    <img src="maquiagem.jpg">
+     </button>
+      <button 
+      onclick="mostrarConteudo('ROSTO')">
+      <img src="rosto .png">
+    </button>
+    <button
+        onclick="mostrarConteudo('corpo')">
+    <img src="corpo.png">
+   </button>
+   <button
+   onclick="mostrarConteudo('roupa')">
+     <img src="roupa.png">
+     </button>
+    <button
+    onclick="mostrarConteudo('outros')">
+    <img src="outros.png">
+    </button>
+    </div>
     <main>
         <article>
             <img src="imagem-blog.png" alt="logo tipo da marca beautyblog">
@@ -156,5 +198,11 @@
                 texto.textContent++;
            }
         })
+        function mostrarConteudo(id){
+            document.querySelectorAll('conteudo-categoria'). forEach(div => {
+                div.style.display = 'none';
+            });
+            document.getElementById(id).style.display = 'block';
+        }
 </script>
 </html>

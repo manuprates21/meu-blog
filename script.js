@@ -9,3 +9,4 @@
                 texto.textContent++;
            }
         })
+        
